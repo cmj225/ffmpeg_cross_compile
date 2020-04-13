@@ -16,7 +16,7 @@ ffmpeg_extra_cflag="--extra-cflags="
 ffmpeg_extra_cxxflag="--extra-cxxflags="
 ffmpeg_extra_ldflag="--extra-ldflags="
 
-ffmpeg_build_config="--prefix=$ffmpeg_dir../output/ffmpeg $ffmpeg_extra_cflag $ffmpeg_extra_cxxflag $ffmpeg_extra_ldflag --disable-gpl --disable-version3 --enable-w32threads --disable-x86asm --enable-shared --enable-static --pkg-config-flags=-static"
+ffmpeg_build_config="--prefix=$ffmpeg_dir/output/ffmpeg $ffmpeg_extra_cflag $ffmpeg_extra_cxxflag $ffmpeg_extra_ldflag --disable-gpl --disable-version3 --enable-w32threads --disable-x86asm --enable-shared --enable-static --pkg-config-flags=-static"
 echo "ffmpeg configuration : $ffmpeg_build_config"
 
 echo "configuring ffmpeg makefile"
