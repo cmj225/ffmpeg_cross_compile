@@ -1,0 +1,13 @@
+diff --git a/ffbuild/library.mak b/ffbuild/library.mak
+index 612bacb980..9bb75b6a49 100644
+--- a/ffbuild/library.mak
++++ b/ffbuild/library.mak
+@@ -49,7 +49,7 @@ $(SUBDIR)$(SLIBNAME): $(SUBDIR)$(SLIBNAME_WITH_MAJOR)
+ 	$(Q)cd ./$(SUBDIR) && $(LN_S) $(SLIBNAME_WITH_MAJOR) $(SLIBNAME)
+ 
+ $(SUBDIR)$(SLIBNAME_WITH_MAJOR): $(OBJS) $(SLIBOBJS) $(SUBDIR)lib$(NAME).ver
+-	$(SLIB_CREATE_DEF_CMD)
++	EXTERN_PREFIX="$(EXTERN_PREFIX)" AR="$(AR_CMD)" NM="$(NM_CMD)" $(SRC_PATH)/compat/windows/makedef $(SUBDIR)lib$(NAME).ver $(SUBDIR)*.o > $$(@:$(SLIBSUF)=.def)
+ 	$$(LD) $(SHFLAGS) $(LDFLAGS) $(LDSOFLAGS) $$(LD_O) $$(filter %.o,$$^) $(FFEXTRALIBS)
+ 	$(SLIB_EXTRA_CMD)
+ 
