@@ -1,0 +1,14 @@
+prefix=/external_library/ffmpeg/script/..//output/ffmpeg
+exec_prefix=${prefix}
+libdir=/external_library/ffmpeg/script/..//output/ffmpeg/lib
+includedir=/external_library/ffmpeg/script/..//output/ffmpeg/include
+
+Name: libswscale
+Description: FFmpeg image rescaling library
+Version: 5.3.100
+Requires: 
+Requires.private: libavutil >= 56.22.100
+Conflicts:
+Libs: -L${libdir}  -lswscale 
+Libs.private: -lm
+Cflags: -I${includedir}

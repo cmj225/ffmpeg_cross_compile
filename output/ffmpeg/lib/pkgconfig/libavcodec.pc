@@ -1,0 +1,14 @@
+prefix=/external_library/ffmpeg/script/..//output/ffmpeg
+exec_prefix=${prefix}
+libdir=/external_library/ffmpeg/script/..//output/ffmpeg/lib
+includedir=/external_library/ffmpeg/script/..//output/ffmpeg/include
+
+Name: libavcodec
+Description: FFmpeg codec library
+Version: 58.35.100
+Requires: 
+Requires.private: libswresample >= 3.3.100, libavutil >= 56.22.100
+Conflicts:
+Libs: -L${libdir}  -lavcodec 
+Libs.private: -pthread -lm -LC:/Git/usr/local/lib -lopenh264 -lole32 -luser32
+Cflags: -I${includedir}
