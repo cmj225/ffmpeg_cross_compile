@@ -10,5 +10,5 @@ Requires:
 Requires.private: libswresample >= 3.3.100, libavutil >= 56.22.100
 Conflicts:
 Libs: -L${libdir}  -lavcodec 
-Libs.private: -pthread -lm -LC:/Git/usr/local/lib -lopenh264 -lole32 -luser32
+Libs.private: -lvpx -lm -pthread -lvpx -lm -pthread -lvpx -lm -pthread -lvpx -lm -pthread -pthread -lm -LC:/Git/usr/local/lib -lopus -LC:/Git/usr/local/lib -lspeex -LC:/Git/usr/local/lib -lopenh264 -lole32 -luser32
 Cflags: -I${includedir}

@@ -10,5 +10,5 @@ Requires:
 Requires.private: libavfilter >= 7.40.101, libswscale >= 5.3.100, libavformat >= 58.20.100, libavcodec >= 58.35.100, libswresample >= 3.3.100, libavutil >= 56.22.100
 Conflicts:
 Libs: -L${libdir}  -lavdevice 
-Libs.private: -lpsapi -lole32 -lstrmiids -luuid -loleaut32 -lshlwapi -lgdi32 -lm -lvfw32
+Libs.private: -lpsapi -lole32 -lstrmiids -luuid -loleaut32 -lshlwapi -lgdi32 -lm -lvfw32 -LC:/Git/usr/local/lib -lmingw32 -lSDL2main -lSDL2
 Cflags: -I${includedir}

@@ -12,13 +12,15 @@ cd $ffmpeg_src_dir && [ -e config.h ] && make distclean
 echo "ffmpeg ffbuild patch"
 #patch $ffmpeg_src_dir/ffbuild/library.mak < $current_dir/ffbuild.patch
 
-ffmpeg_extra_cflag="--extra-cflags=-I../output/include"
-ffmpeg_extra_cxxflag="--extra-cxxflags="
-ffmpeg_extra_ldflag="--extra-ldflags=-L../output/lib"
+ffmpeg_extra_cflag="--extra-cflags=-I/usr/local/include"
+ffmpeg_extra_cxxflag="--extra-cxxflags=-I/usr/local/include"
+ffmpeg_extra_ldflag="--extra-ldflags=-L/usr/local/lib"
 ffmpeg_license_flag="--disable-gpl --disable-version3"
-ffmpeg_extra_codec="--enable-libopenh264"
+ffmpeg_config_flag="--disable-x86asm --enable-shared --enable-static --enable-sdl2" #--enable-openssl"
+ffmpeg_external_video_codec="--enable-libopenh264 --enable-libvpx"
+ffmpeg_external_audio_codec="--enable-libopus --enable-libspeex"
 
-ffmpeg_build_config="--prefix=$ffmpeg_dir/output/ffmpeg $ffmpeg_extra_cflag $ffmpeg_extra_cxxflag $ffmpeg_extra_ldflag $ffmpeg_license_flag $ffmpeg_extra_codec --disable-x86asm --enable-shared --enable-static"
+ffmpeg_build_config="--prefix=$ffmpeg_dir/output/ffmpeg $ffmpeg_extra_cflag $ffmpeg_extra_cxxflag $ffmpeg_extra_ldflag $ffmpeg_license_flag $ffmpeg_config_flag $ffmpeg_external_video_codec $ffmpeg_external_audio_codec"
 echo "ffmpeg configuration : $ffmpeg_build_config"
 
 echo "configuring ffmpeg makefile"
