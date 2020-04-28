@@ -1,7 +1,6 @@
 # FFmpeg build on Windows envirionment
-1. chocolatery 설치
+1. git for windows 설치 (path: C://Git)
 2. cmake, make, mingw, diff, pkg-config 설치
-3. git for windows 설치
 4. cmake.exe 등을 git의 bin으로 이동
 5. git bash 관리자 권한으로 실행
 6. go to ./script
