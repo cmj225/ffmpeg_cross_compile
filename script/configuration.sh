@@ -23,13 +23,13 @@ ffmpeg_window_flag="$ffmpeg_extra_cflag $ffmpeg_extra_cxx_flag $ffmpeg_extra_ldf
 
 # external lib handling
 ffmpeg_external_lib="--enable-sdl2" #--enable-openssl"
-ffmpeg_external_video_codec="--enable-libopenh264 --enable-libvpx"
-ffmpeg_external_audio_codec="--enable-libopus --enable-libspeex"
+ffmpeg_external_video_codec="--enable-libopenh264" #--enable-libvpx"
+ffmpeg_external_audio_codec="--enable-libspeex" #--enable-libopus"
 ffmpeg_external="$ffmpeg_external_lib $ffmpeg_external_video_codec $ffmpeg_external_audio_codec"
 
 ffmpeg_build_window_config="--prefix=$ffmpeg_dir/output/ffmpeg_window $ffmpeg_window_flag $ffmpeg_default_flag $ffmpeg_external"
 
-ffmpeg_build_tos_config="--prefix=$ffmpeg_dir/output/ffmpeg_linux $ffmpeg_default_flags"
+ffmpeg_build_tos_config="--prefix=$ffmpeg_dir/output/ffmpeg_linux $ffmpeg_default_flags $ffmpeg_external"
 
 
 # go to cofigure
