@@ -31,9 +31,10 @@ ffmpeg_build_window_config="--prefix=$ffmpeg_dir/output/ffmpeg_window $ffmpeg_wi
 
 ffmpeg_build_tos_config="--prefix=$ffmpeg_dir/output/ffmpeg_linux $ffmpeg_default_flags $ffmpeg_external"
 
+ffmpeg_build_default_config="--prefix=/usr --libdir=lib/i386-linux-gnu $ffmpeg_default_flags $ffmpeg_external"
 
 # go to cofigure
-ffmpeg_build_config="$ffmpeg_build_tos_config"
+ffmpeg_build_config="$ffmpeg_build_default_config"
 echo "ffmpeg configuration : $ffmpeg_build_config"
 
 echo "configuring ffmpeg makefile"
