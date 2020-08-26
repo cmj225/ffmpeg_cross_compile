@@ -22,19 +22,19 @@ ffmpeg_extra_ldflag="--extra-ldflags=-L/usr/local/lib"
 ffmpeg_window_flag="$ffmpeg_extra_cflag $ffmpeg_extra_cxx_flag $ffmpeg_extra_ldflag"
 
 # external lib handling
-ffmpeg_external_lib="--enable-sdl2" #--enable-openssl"
-ffmpeg_external_video_codec="--enable-libopenh264" #--enable-libvpx"
-ffmpeg_external_audio_codec="--enable-libspeex" #--enable-libopus"
+ffmpeg_external_lib="" #--enable-sdl2" #--enable-openssl"
+ffmpeg_external_video_codec="" #--enable-libopenh264" #--enable-libvpx"
+ffmpeg_external_audio_codec="" #--enable-libspeex" #--enable-libopus"
 ffmpeg_external="$ffmpeg_external_lib $ffmpeg_external_video_codec $ffmpeg_external_audio_codec"
 
-ffmpeg_build_window_config="--prefix=$ffmpeg_dir/output/ffmpeg_window $ffmpeg_window_flag $ffmpeg_default_flag $ffmpeg_external"
+ffmpeg_build_window_config="--prefix=/usr/local/ $ffmpeg_window_flag $ffmpeg_default_flag $ffmpeg_external"
 
 ffmpeg_build_tos_config="--prefix=$ffmpeg_dir/output/ffmpeg_linux $ffmpeg_default_flags $ffmpeg_external"
 
 ffmpeg_build_default_config="--prefix=/usr --libdir=lib/i386-linux-gnu $ffmpeg_default_flags $ffmpeg_external"
 
 # go to cofigure
-ffmpeg_build_config="$ffmpeg_build_default_config"
+ffmpeg_build_config="$ffmpeg_build_window_config"
 echo "ffmpeg configuration : $ffmpeg_build_config"
 
 echo "configuring ffmpeg makefile"
